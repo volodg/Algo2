@@ -1,22 +1,13 @@
-use termion::{color, style};
+extern crate rand;
 
-fn foobar(_x: i32) {
-    let color = color::Fg(color::LightCyan);
-    let x = {
-        let y = 1; // first statement
-        let z = 2; // second statement
-        y + z // this is the *tail* - what the whole block will evaluate to
-    };
-    println!("{}x = {}", color, x);
-}
+//use smallest_missing_positive_number;
+//https://www.geeksforgeeks.org/find-the-smallest-positive-number-missing-from-an-unsorted-array/
+mod arrays;
+use arrays::dublications_missings::smallest_missing_positive_number;
 
 fn main() {
-    let x = vec![1, 2, 3, 4, 5, 6, 7, 8]
-        .iter()
-        .map(|x| x + 3)
-        .fold(0, |x, y| x + y);
-
-    foobar(x); // the type of `x` will be inferred from here
-
-    println!("{}{}Hello, world!", color::Fg(color::LightMagenta), style::Bold);
+    let mut nums = vec![2, 3, 7, 6, 8, -1, -10, 15]; //1
+    //let mut nums = vec![2, 3, -7, 6, 8, 1, -10, 15]; //4
+    //let mut nums = vec![1, 1, 0, -1, -2]; //2
+    smallest_missing_positive_number(&mut nums);
 }
