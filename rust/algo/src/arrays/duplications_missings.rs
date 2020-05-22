@@ -19,12 +19,22 @@ pub fn smallest_missing_positive_number(nums: &mut Vec<i32>) -> i32 {
     return -1;
 }
 
-pub fn deleted_number(nums: &mut Vec<i32>) -> i32 {
+#[allow(dead_code)]
+pub fn deleted_number(nums: &Vec<i32>) -> i32 {
+    let expected = ((1 + nums.len() + 1) * (nums.len() + 1) / 2) as i32;
+    expected - nums.iter().sum::<i32>()
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_deleted_number() {
+        assert_eq!(deleted_number(&vec![1, 2]), 3);
+        assert_eq!(deleted_number(&vec![1, 3]), 2);
+        assert_eq!(deleted_number(&vec![2, 3]), 1);
+    }
 
     #[test]
     fn test_smallest_missing_positive_number() {
