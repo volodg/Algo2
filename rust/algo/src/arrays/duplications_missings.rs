@@ -1,4 +1,6 @@
 
+//use smallest_missing_positive_number;
+//https://www.geeksforgeeks.org/find-the-smallest-positive-number-missing-from-an-unsorted-array/
 #[allow(dead_code)]
 pub fn smallest_missing_positive_number(nums: &mut Vec<i32>) -> i32 {
     for i in 0..nums.len() {

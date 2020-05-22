@@ -1,6 +1,7 @@
 
+//https://tproger.ru/problems/algorithm-that-displays-all-valid-combinations-of-pairs-of-brackets/
 #[derive(Debug)]
-struct Solution {
+pub struct Solution {
     data: Vec<bool>,
     state: i16,
     capacity: i16
@@ -57,7 +58,7 @@ impl Solution {
         self.capacity == 0
     }
 
-    fn build_all(capacity: i16) -> Vec<String> {
+    pub fn build_all(capacity: i16) -> Vec<String> {
         let mut final_solutions: Vec<Solution> = vec![];
         let mut queue: Vec<Solution> = vec![Solution::initial(capacity)];
 

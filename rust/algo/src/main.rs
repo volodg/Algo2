@@ -2,10 +2,8 @@ extern crate rand;
 
 //use std::os::macos::raw::stat;
 
-//use smallest_missing_positive_number;
-//https://www.geeksforgeeks.org/find-the-smallest-positive-number-missing-from-an-unsorted-array/
-//mod arrays;
-//use arrays::dublications_missings::smallest_missing_positive_number;
+mod arrays;
+use arrays::balanced_parenthes::Solution;
 
 fn main() {
     let result = Solution::build_all(5);
